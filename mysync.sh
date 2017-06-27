@@ -8,7 +8,7 @@
 chksync=$(pgrep 'rslsync')
 if [ "$1" == "start" ]
 	then
-		/home/RslSync/rslsync --config sync.conf
+		/home/RslSync/rslsync --config /home/RslSync/sync.conf
 		echo "启动成功，请访问http://IP:8888/"
 	elif [ "$1" == "status" ]
 		then
