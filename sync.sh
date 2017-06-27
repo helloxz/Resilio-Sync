@@ -53,6 +53,8 @@ function uninstall_sync(){
 	chksync=$(pgrep 'rslsync')
 	kill -9 ${chksync}
 	rm -rf /home/RslSync
+	#删除alias
+	sed -i '/^.*mysync.*/'d ~/.bashrc
 	echo "卸载完成."
 }
 #搜索是否存在RslSync文件夹
