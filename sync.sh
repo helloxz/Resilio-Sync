@@ -1,7 +1,7 @@
 #!/bin/bash
 ############### 一键安装RslSync脚本 ###############
 #Author:xiaoz.me
-#Update:2017-03-27
+#Update:2017-09-01
 #Help:https://www.xiaoz.me/archives/8219
 ####################### END #######################
 
@@ -39,6 +39,9 @@ function install_sync(){
 	#设置alias
 	echo "alias mysync='/home/RslSync/mysync.sh'" >>  ~/.bashrc
 	./rslsync --config sync.conf
+	#开机自启
+	echo "/home/RslSync/rslsync --config /home/RslSync/sync.conf" >> /etc/rc.local
+	#获取IP
 	osip=$(curl http://https.tn/ip/myip.php?type=onlyip)
 	chk_firewall
 	echo "############################# 安装成功 #############################"
@@ -55,6 +58,7 @@ function uninstall_sync(){
 	rm -rf /home/RslSync
 	#删除alias
 	sed -i '/^.*mysync.*/'d ~/.bashrc
+	sed -i '/^.*rslsync.*/'d /etc/rc.local 
 	echo "卸载完成."
 }
 #搜索是否存在RslSync文件夹
