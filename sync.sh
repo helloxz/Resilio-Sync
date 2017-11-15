@@ -1,7 +1,7 @@
 #!/bin/bash
 ############### 一键安装RslSync脚本 ###############
 #Author:xiaoz.me
-#Update:2017-09-01
+#Update:2017-11-15
 #Help:https://www.xiaoz.me/archives/8219
 ####################### END #######################
 
@@ -22,7 +22,7 @@ function install_sync(){
 	mkdir -p /home/RslSync
 	cp mysync.sh /home/RslSync/
 	cd /home/RslSync
-	wget https://soft.hixz.org/linux/resilio-sync_x64.tar.gz --no-check-certificate
+	wget https://download-cdn.resilio.com/stable/linux-x64/resilio-sync_x64.tar.gz --no-check-certificate
 	tar -zxf resilio-sync_x64.tar.gz
 	rm -rf resilio-sync_x64.tar.gz
 	./rslsync --dump-sample-config > sync.conf 
