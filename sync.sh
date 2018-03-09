@@ -1,7 +1,7 @@
 #!/bin/bash
 ############### 一键安装RslSync脚本 ###############
 #Author:xiaoz.me
-#Update:2017-11-15
+#Update:2018-03-09
 #Help:https://www.xiaoz.me/archives/8219
 ####################### END #######################
 
@@ -42,7 +42,7 @@ function install_sync(){
 	#开机自启
 	echo "/home/RslSync/rslsync --config /home/RslSync/sync.conf" >> /etc/rc.local
 	#获取IP
-	osip=$(curl http://https.tn/ip/myip.php?type=onlyip)
+	osip=$(curl -4s https://api.ip.sb/ip)
 	chk_firewall
 	echo "############################# 安装成功 #############################"
 	echo "访问地址:http://${osip}:8888/"
