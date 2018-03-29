@@ -1,5 +1,8 @@
 # Resilio Sync一键安装脚本
 
+### 注意
+* Resilio Sync已经被GFW和谐，国内VPS请不要使用该脚本。
+
 ### 要求
 * CentOS 6/7 X64
 * 其它X64系统应该也支持，具体未测试。
